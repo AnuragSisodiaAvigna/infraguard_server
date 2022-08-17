@@ -4,11 +4,20 @@ const app = express();
 const http = require("http");
 const port = 8080;
 const bodyparser = require("body-parser");
-
+const helmet = require("helmet");
+const cors = require("cors");
+app.use(cors());
 const server = http.createServer(app);
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
+
+//Cross origin resolved
+app.use(
+  helmet({
+    crossOriginResourcePolicy: false,
+  })
+);
 
 //Server
 server.listen(port);
