@@ -67,7 +67,7 @@ const loggerInstance = winston.createLogger({
   transports,
 });
 //Routes
-app.get("/send-mail", (req, res, next) => {
+app.post("/send-mail", (req, res, next) => {
   try {
     const { first_name, last_name, company, message, email, phone_no } =
       req.body;
