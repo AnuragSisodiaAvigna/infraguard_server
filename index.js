@@ -2,7 +2,7 @@ const express = require("express");
 const winston = require("winston");
 const app = express();
 const http = require("http");
-const port = 8080;
+const port = 53;
 const bodyparser = require("body-parser");
 const helmet = require("helmet");
 const cors = require("cors");
@@ -24,6 +24,7 @@ server.listen(port);
 server.on("listening", () => {
   console.log(`The server has started on port: ${port}`);
 });
+
 // Loggers
 const transports = [];
 if (process.env.NODE_ENV != "dev" && process.env.NODE_ENV != "staging") {
@@ -88,13 +89,13 @@ app.get("/send-mail", (req, res, next) => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "anurag.km.sisodia@gmail.com",
-        pass: "vfznbobylvgfoddq",
+        user: "campaign@infraguard.io",
+        pass: "kftxagitnvxouzbz",
       },
     });
     var mailOptions = {
-      from: "anurag.km.sisodia@gmail.com",
-      to: "anurag.km.sisodia@gmail.com",
+      from: "campaign@infraguard.io",
+      to: "sales@infraguard.io",
       subject: "Schedule Demo",
       html: `
         <html lang="en">
