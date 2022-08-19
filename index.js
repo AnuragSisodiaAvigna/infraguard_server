@@ -89,12 +89,12 @@ app.post("/send-mail", (req, res, next) => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "campaign@infraguard.io",
+        user: "explore@infraguard.io",
         pass: "kftxagitnvxouzbz",
       },
     });
     var mailOptions = {
-      from: "campaign@infraguard.io",
+      from: "explore@infraguard.io",
       to: "sales@infraguard.io",
       subject: "Schedule Demo",
       html: `
